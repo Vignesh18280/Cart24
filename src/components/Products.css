@@ -1,6 +1,7 @@
 .whole{
     display : flex ; 
     flex-wrap: wrap;
+    background-color: white;
     justify-content: space-evenly;
     margin: 20px 20px;
 }
@@ -51,7 +52,7 @@
     margin: 2px 3.2rem 2px 8px;
 }
 
-.stock{
+/* .stock{
     font-size: medium;
     display: inline;
     font-weight: 600;
@@ -59,4 +60,4 @@
     color: red;
     margin: 2px 2px 2px 3.2rem;
 
-}
+} */

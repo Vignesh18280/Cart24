@@ -12,18 +12,18 @@
 }
 
 .Home{
-    color: white;
+     color:white;
      margin: 0px 10px 0px 80rem;
      text-decoration: none;
 }
 
 .login{
-    color: white;
+    color:white;
     margin: 0px 20px 0px 10px;
 }
 
 .logo{
-    color: white;
+    color:white;
     justify-self: flex-start;
 }
 
