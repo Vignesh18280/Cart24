@@ -1,0 +1,32 @@
+
+.nav{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color:white;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    justify-content: flex-end;
+    align-content:center;
+    align-items: center;
+}
+
+.Home{
+     margin: 0px 10px 0px 80rem;
+     text-decoration: none;
+}
+
+.login{
+    margin: 0px 20px 0px 10px;
+}
+
+.logo{
+    justify-self: flex-start;
+}
+
+@media screen and ((max-width: 400px)) {
+    .Home{
+        margin: 0px 10px 0px 10rem;
+        text-decoration: none;
+   }
+}
