@@ -1,5 +1,6 @@
 import React from 'react'
 import './Products.css'
+import Slidesshow from './Slidesshow';
 
 const details =  [
     {
@@ -370,6 +371,7 @@ const details =  [
 const Products = () => {
   return (
     <div className='whole'>
+      <Slidesshow/>
     {details.map((node)=>{
         return(
       <div className='card'>
