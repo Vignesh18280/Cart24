@@ -1,7 +1,7 @@
 .whole{
     display : flex ; 
     flex-wrap: wrap;
-    background-color: white;
+    background-color:linear-gradient(#141e30, #243b55);
     justify-content: space-evenly;
     margin: 20px 20px;
 }
