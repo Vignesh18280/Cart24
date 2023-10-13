@@ -39,7 +39,7 @@ function Addproj() {
                 <label>thumbnail</label>
                 </div>
 
-                <button onSubmit={handlesubmit} className='a'>
+                <button onSubmit={handlesubmit} className='a' type='submit' >
                 <span></span>
                 <span></span>
                 <span></span>
