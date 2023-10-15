@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState , useEffect} from 'react'
 import './TotalView.css'
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 function Totalview() {
+    const id  = useParams();
+    console.log(id);
     const details = [{
         "id": 1,
         "title": "iPhone 9",
@@ -14,9 +18,26 @@ function Totalview() {
         "category": "smartphones",
         "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
       }]
+
+      const [detail , setdetails] = useState([]);
+      const getproducts = async() => {
+        const res = await axios.get('http://localhost:8000/products');
+        const data = res.data;
+          // setdetails(data.find(p=>p._id==id));
+          //console.log(data.find(p=>p._id==id.projid));
+          const value = data.filter(p=>p._id==id.projid);
+          console.log(value);
+          setdetails(value);
+          console.log(detail)
+      }
+      useEffect(()=>{
+        getproducts();
+      },[])
+
     return(
         <div style={{padding : '0px 10px'}}>
-           <div className='ph'>
+          
+           {/* <div className='ph'>
             <img src={details[0].thumbnail} alt="product image" />
            </div>
            <div className='ph'>
@@ -50,14 +71,15 @@ function Totalview() {
                  </li>
                </ul>
            </div>
-           <div className='dabba'>
+           <div className='dab'>
                  <div className='buy'>
                         <h3>Buy</h3>
                  </div>
                  <div className='add'>
                       <h3>Add </h3>
                  </div>
-           </div>
+           </div> */}
+           {detail.map((node)=>{<h1 style={{color:'white'}}>{node.title}</h1>})}
         </div>
     );
 }

@@ -3,6 +3,7 @@ import './Products.css'
 import Slidesshow from './Slidesshow';
 import axios from 'axios'
 import { useEffect ,useState} from 'react';
+import { Link } from 'react-router-dom';
 // import {details} from './details';
 
 const Products = () => {
@@ -22,11 +23,13 @@ const Products = () => {
     {details.map((node)=>{
         return(
       <div className='card'>
+        <Link to={`/${node._id}`}>
         <img className = 'image' src={node.thumbnail} alt="" />
         <p className='title'>{node.title}</p>
         <p className='price'><span className='bld'>Price : </span>{node.price}</p>
         <p  className = 'rating' > <span className='bld'>Rating : </span>{node.rating}</p>
         {/* <p className='stock' ><span className='bld'>Stock : </span>{node.stock}</p>           */}
+        </Link>
       </div>
         )
     })}
