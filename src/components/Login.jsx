@@ -27,6 +27,7 @@ const Login = () => {
         <div class="facebook">
           <a href="#"><i class="fab fa-facebook-f"></i>Sign in With Facebook</a>
         </div>
+        <div class="option">Do not have an account?<Link  >Sign up</Link></div>
      </div>
     </div>
     )

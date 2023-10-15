@@ -1,9 +1,21 @@
 import React from 'react'
 import './Products.css'
 import Slidesshow from './Slidesshow';
-import {details} from './details';
+import axios from 'axios'
+import { useEffect ,useState} from 'react';
+// import {details} from './details';
 
 const Products = () => {
+  const [details,setdetails] = useState([]);
+  const getproducts=async()=>{
+      const res = await axios.get('http://localhost:8000/products');
+      console.log(res.data);
+      setdetails(res.data);
+      
+  }
+  useEffect(()=>{
+    getproducts();
+  },[])
   return (
     <div className='whole'>
       <Slidesshow/>

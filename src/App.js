@@ -4,6 +4,7 @@ import Navbarr from './components/Navbarr';
 import Products from './components/Products';
 import Login from './components/Login';
 import Addproj from './components/Addproj';
+import Totalview from './components/TotalView';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
          <Route exact path = '/' element = {<Products/>}/>
          <Route exact path = '/Login' element = {<Login/>}/>
          <Route exact path = '/Addproj' element={<Addproj/>}/>
+         <Route path = '/:projid' element=<Totalview/>/>
       </Routes>
     </div>
   );
