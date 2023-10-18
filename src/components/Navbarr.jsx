@@ -14,7 +14,7 @@ const Navbarr = () => {
             <Link className='dec' to = '/Addproj' style={{ textDecoration: 'none' , color : 'white'}} >Addproj</Link>
         </div>
         <div className='login' >
-            <Link className='dec' to = '/Login' style={{ textDecoration: 'none' , color : 'white'}} >login</Link>
+            <Link className='dec' to = '/Login' style={{ textDecoration: 'none' , color : 'white'}} >Login</Link>
         </div>
       </div>
     </div>
