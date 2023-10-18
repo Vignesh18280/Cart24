@@ -20,6 +20,7 @@ const Login = () => {
         await axios.post(`http://localhost:8000/login/${1}`,data)
            .then((res)=> {
             if(res.status === 200 ){
+              localStorage.setItem('log',JSON.stringify(Email));
               window.location = '/';
               console.log("correct password");
             } 
