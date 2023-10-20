@@ -20,7 +20,8 @@ const Login = () => {
         await axios.post(`http://localhost:8000/login/${1}`,data)
            .then((res)=> {
             if(res.status === 200 ){
-              localStorage.setItem('log',JSON.stringify(Email));
+              let val = Email;
+              localStorage.setItem('log',JSON.stringify(val.slice(0,val.lastIndexOf('@'))));
               window.location = '/';
               console.log("correct password");
             } 
@@ -36,11 +37,11 @@ const Login = () => {
       <form action="#">
         <div class="title">Login</div>
         <div class="input-box underline">
-          <input type="text" name='Email' value={Email} onChange={(e)=>{setEmail(e.target.value)}} placeholder="Enter Your Email" required/>
+          <input type="text" name='Email' value={Email} onChange={(e)=>{setEmail(e.target.value)}} placeholder="Enter Your Email" required='true'/>
           <div class="underline"></div>
         </div>
         <div class="input-box">
-          <input type="password" name='Password' value={Password} onChange={(e)=>{setPassword(e.target.value)}}  placeholder="Enter Your Password" required/>
+          <input type="password" name='Password' value={Password} onChange={(e)=>{setPassword(e.target.value)}}  placeholder="Enter Your Password" required='true'/>
           <div class="underline"></div>
         </div>
         <div class="input-box button">
@@ -54,7 +55,7 @@ const Login = () => {
         <div class="facebook">
           <a href="#"><i class="fab fa-facebook-f"></i>Sign in With Facebook</a>
         </div>
-        <div class="option">Do not have an account?<Link  >Sign up</Link></div>
+        <div class="option">Do not have an account?<Link to='/Signup' >Sign up</Link></div>
      </div>
     </div>
     )
