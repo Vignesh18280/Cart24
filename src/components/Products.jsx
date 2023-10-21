@@ -22,15 +22,17 @@ const Products = () => {
       <Slidesshow/>
     {details.map((node)=>{
         return(
-      <div className='card'>
-        <Link to={`/${node._id}`}>
-        <img className = 'image' src={node.thumbnail} alt="" />
-        <p className='title'>{node.title}</p>
-        <p className='price'><span className='bld'>Price : </span>{node.price}</p>
-        <p  className = 'rating' > <span className='bld'>Rating : </span>{node.rating}</p>
-        {/* <p className='stock' ><span className='bld'>Stock : </span>{node.stock}</p>           */}
-        </Link>
-      </div>
+          <>
+            <Link to={`/${node._id}`}>
+            <div className='card'>
+            <img className = 'image' src={node.thumbnail} alt="" />
+            <p className='title'>{node.title}</p>
+            <p className='price'><span className='bld'>Price : </span>{node.price}</p>
+            <p  className = 'rating' > <span className='bld'>Rating : </span>{node.rating}</p>
+            {/* <p className='stock' ><span className='bld'>Stock : </span>{node.stock}</p>           */}
+          </div>
+          </Link>
+          </>
         )
     })}
     </div>

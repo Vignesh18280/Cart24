@@ -5,6 +5,8 @@ import {details} from './details';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useDispatch } from 'react-redux';
+import {AddProducts} from '../Features/ProjectsSlics'
 const detail = JSON.stringify(details);
 
 function Addproj() {
@@ -14,6 +16,7 @@ function Addproj() {
     const [rating,setrating] = useState('');
     const [thumbnail,setthumbnail] = useState('');
     const [details,setdetails] = useState(detail);
+    const dispatch = useDispatch();
     
     let handlesubmit = async(e) =>{
           e.preventDefault();
@@ -25,13 +28,15 @@ function Addproj() {
             thumbnail : thumbnail
         }
 
-        console.log(data);
-        const res = await axios.get('http://localhost:8000/products');
-        const product = res.data;
-        if(product.find(v=>v.title == data.title)){
-            alert("The product Already Exists")
+        dispatch(AddProducts(data));
+
+        // console.log(data);
+        // const res = await axios.get('http://localhost:8000/products');
+        // const product = res.data;
+        // if(product.find(v=>v.title == data.title)){
+        //     alert("The product Already Exists")
             
-        }else{adddata(data);window.location='/'}
+        // }else{adddata(data);window.location='/'}
 
 
         // setdetails([...details,data]);
@@ -39,11 +44,11 @@ function Addproj() {
         // console.log(modi);
     } 
     
-    const adddata = async(data)=>{
+    // const adddata = async(data)=>{
         
-         const res = await axios.post('http://localhost:8000/products',data);
-         console.log(res.data);
-    }
+    //      const res = await axios.post('http://localhost:8000/products',data);
+    //      console.log(res.data);
+    // }
     return(
         <div>
             <div class="login-box">

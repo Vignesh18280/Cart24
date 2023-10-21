@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Addproj from './components/Addproj';
 import Totalview from './components/TotalView';
 import Signup from './components/Signup';
+import Cart from './components/Cart';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
          <Route exact path = '/Login' element = {<Login/>}/>
          <Route exact path = '/Addproj' element={<Addproj/>}/>
          <Route exact path = '/Signup'element={<Signup/>}/>
-         <Route path = '/:projid' element=<Totalview/>/>
+         <Route exact path = '/Cart'element={<Cart/>}/>
+         <Route path = '/:projid' element={<Totalview/>}/>
       </Routes>
     </div>
   );
